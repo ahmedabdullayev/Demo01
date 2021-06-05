@@ -1,0 +1,24 @@
+@model string
+<h1>@ViewBag.loler</h1>
+@{
+    var foo = 100;
+    var bar = 2;
+    var script = "@<script>alert('hacked');</script>";
+}
+<h1>@(foo+bar)</h1>
+@* <h1>@Html.Raw(script)</h1> *@
+<form method="post">
+    <div class="form-group">
+        <label for="foo">Foo</label>
+        <input type="text" class="form-control" id="foo" aria-describedby="foo" name="foo">
+        <label for="foo">Far</label>
+        <input type="text" class="form-control" id="far" aria-describedby="far" name="far">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section HeadScripts {
+    <script>
+        alert('in header');
+    </script>
+}
