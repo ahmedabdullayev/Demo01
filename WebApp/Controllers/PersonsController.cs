@@ -63,19 +63,19 @@ namespace WebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,FirstName,LastName,PersonPictureId")] PersonCreateEditVm person)
+        public async Task<IActionResult> Create(PersonCreateEditVm vm)
         {
-            var vm = new PersonCreateEditVm();
-
+            // var vm = new PersonCreateEditVm();
             if (ModelState.IsValid)
             {
-                person.Person.id = Guid.NewGuid();
-                _context.Add(person);
+                vm.Person.id = Guid.NewGuid();
+                
+                _context.Add(vm.Person);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            vm.PersonPictureSelectList = new SelectList(_context.Set<PersonPicture>(), "Id", "Id", person.Person!.PersonPictureId);
-            return View(person);
+            vm.PersonPictureSelectList = new SelectList(_context.PersonPictures, "Id", "Id", vm.Person.PersonPictureId);
+            return View(vm);
         }
 
         // GET: Persons/Edit/5
