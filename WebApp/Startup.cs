@@ -44,7 +44,7 @@ namespace WebApp
         {
             
             //DATA SEEDING ETC
-           // SetupAppData(app, Configuration);
+            SetupAppData(app, Configuration);
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

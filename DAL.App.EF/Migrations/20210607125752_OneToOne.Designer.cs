@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.App.EF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210527170927_OneToOne")]
+    [Migration("20210607125752_OneToOne")]
     partial class OneToOne
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

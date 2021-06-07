@@ -49,8 +49,8 @@ namespace WebApp.Controllers
         // GET: Contacts/Create
         public IActionResult Create()
         {
-            ViewData["ContactTypeId"] = new SelectList(_context.ContactTypes, "Id", "Id");
-            ViewData["PersonId"] = new SelectList(_context.Persons, "id", "id");
+            ViewData["ContactTypeId"] = new SelectList(_context.ContactTypes, "Id", "ContactTypeValue");
+            ViewData["PersonId"] = new SelectList(_context.Persons, "id", "FirstName");
             return View();
         }
 
@@ -68,8 +68,8 @@ namespace WebApp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ContactTypeId"] = new SelectList(_context.ContactTypes, "Id", "Id", contact.ContactTypeId);
-            ViewData["PersonId"] = new SelectList(_context.Persons, "id", "id", contact.PersonId);
+            ViewData["ContactTypeId"] = new SelectList(_context.ContactTypes, "Id", "ContactTypeValue", contact.ContactTypeId);
+            ViewData["PersonId"] = new SelectList(_context.Persons, "id", "FirstName", contact.PersonId);
             return View(contact);
         }
 
@@ -86,8 +86,8 @@ namespace WebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["ContactTypeId"] = new SelectList(_context.ContactTypes, "Id", "Id", contact.ContactTypeId);
-            ViewData["PersonId"] = new SelectList(_context.Persons, "id", "id", contact.PersonId);
+            ViewData["ContactTypeId"] = new SelectList(_context.ContactTypes, "Id", "ContactTypeValue", contact.ContactTypeId);
+            ViewData["PersonId"] = new SelectList(_context.Persons, "id", "FirstName", contact.PersonId);
             return View(contact);
         }
 
@@ -123,8 +123,8 @@ namespace WebApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ContactTypeId"] = new SelectList(_context.ContactTypes, "Id", "Id", contact.ContactTypeId);
-            ViewData["PersonId"] = new SelectList(_context.Persons, "id", "id", contact.PersonId);
+            ViewData["ContactTypeId"] = new SelectList(_context.ContactTypes, "Id", "ContactTypeValue", contact.ContactTypeId);
+            ViewData["PersonId"] = new SelectList(_context.Persons, "id", "FirstName", contact.PersonId);
             return View(contact);
         }
 

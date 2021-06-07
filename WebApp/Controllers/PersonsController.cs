@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DAL.App.EF;
 using Domain;
-using WebApp.ViewModels.Persons;
 
 namespace WebApp.Controllers
 {
@@ -49,13 +48,8 @@ namespace WebApp.Controllers
         // GET: Persons/Create
         public IActionResult Create()
         {
-            var vm = new PersonCreateEditVm();
-
-            // ViewData["PersonPictureId"] = new SelectList(_context.Set<PersonPicture>(), "Id", "Id");
-            vm.PersonPictureSelectList = new SelectList(_context.Set<PersonPicture>(), "Id", "Id");
-
-            vm.isDarkMode = true;
-            return View(vm);
+            ViewData["PersonPictureId"] = new SelectList(_context.PersonPictures, "Id", "PictureUrl");
+            return View();
         }
 
         // POST: Persons/Create
@@ -63,19 +57,17 @@ namespace WebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(PersonCreateEditVm vm)
+        public async Task<IActionResult> Create([Bind("id,FirstName,LastName,PersonPictureId")] Person person)
         {
-            // var vm = new PersonCreateEditVm();
             if (ModelState.IsValid)
             {
-                vm.Person.id = Guid.NewGuid();
-                
-                _context.Add(vm.Person);
+                person.id = Guid.NewGuid();
+                _context.Add(person);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            vm.PersonPictureSelectList = new SelectList(_context.PersonPictures, "Id", "Id", vm.Person.PersonPictureId);
-            return View(vm);
+            ViewData["PersonPictureId"] = new SelectList(_context.PersonPictures, "Id", "PictureUrl", person.PersonPictureId);
+            return View(person);
         }
 
         // GET: Persons/Edit/5
@@ -91,7 +83,7 @@ namespace WebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["PersonPictureId"] = new SelectList(_context.Set<PersonPicture>(), "Id", "Id", person.PersonPictureId);
+            ViewData["PersonPictureId"] = new SelectList(_context.PersonPictures, "Id", "PictureUrl", person.PersonPictureId);
             return View(person);
         }
 
@@ -127,7 +119,7 @@ namespace WebApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PersonPictureId"] = new SelectList(_context.Set<PersonPicture>(), "Id", "Id", person.PersonPictureId);
+            ViewData["PersonPictureId"] = new SelectList(_context.PersonPictures, "Id", "PictureUrl", person.PersonPictureId);
             return View(person);
         }
 

@@ -43,7 +43,6 @@ namespace WebApp.Controllers
             return View(personPicture);
         }
 
-       
         // GET: PersonPictures/Create
         public IActionResult Create()
         {
