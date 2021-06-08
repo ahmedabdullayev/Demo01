@@ -22,8 +22,12 @@ namespace WebApp.Controllers
         // GET: Persons
         public async Task<IActionResult> Index()
         {
-            var appDbContext = _context.Persons.Include(p => p.PersonPicture);
-            return View(await appDbContext.ToListAsync());
+            var res = await _context.Persons
+                .Include(p => p.PersonPicture)
+                .Include(p=> p.Contacts)
+                .ThenInclude(c=>c.ContactType)
+                .ToListAsync();
+            return View(res);
         }
 
         // GET: Persons/Details/5
