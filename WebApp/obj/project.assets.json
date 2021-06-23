@@ -2309,7 +2309,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Domain": "1.0.0",
+          "Domain.App": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.1",
           "Microsoft.EntityFrameworkCore": "5.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.1"
@@ -2321,14 +2321,17 @@
           "bin/placeholder/DAL.App.EF.dll": {}
         }
       },
-      "Domain/1.0.0": {
+      "Domain.App/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
         "compile": {
-          "bin/placeholder/Domain.dll": {}
+          "bin/placeholder/Domain.App.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Domain.dll": {}
+          "bin/placeholder/Domain.App.dll": {}
         }
       }
     }
@@ -7833,10 +7836,10 @@
       "path": "../DAL.App.EF/DAL.App.EF.csproj",
       "msbuildProject": "../DAL.App.EF/DAL.App.EF.csproj"
     },
-    "Domain/1.0.0": {
+    "Domain.App/1.0.0": {
       "type": "project",
-      "path": "../Domain/Domain.csproj",
-      "msbuildProject": "../Domain/Domain.csproj"
+      "path": "../Domain.App/Domain.App.csproj",
+      "msbuildProject": "../Domain.App/Domain.App.csproj"
     }
   },
   "projectFileDependencyGroups": {

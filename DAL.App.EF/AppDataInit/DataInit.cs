@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Domain;
+using Domain.App;
 using Microsoft.EntityFrameworkCore;
 
 namespace DAL.App.EF.AppDataInit

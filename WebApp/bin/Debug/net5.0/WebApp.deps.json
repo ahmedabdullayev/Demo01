@@ -2102,7 +2102,7 @@
       },
       "DAL.App.EF/1.0.0": {
         "dependencies": {
-          "Domain": "1.0.0",
+          "Domain.App": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.1",
           "Microsoft.EntityFrameworkCore": "5.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.5"
@@ -2114,12 +2114,15 @@
           "DAL.App.EF.dll": {}
         }
       },
-      "Domain/1.0.0": {
+      "Domain.App/1.0.0": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
         "runtime": {
-          "Domain.dll": {}
+          "Domain.App.dll": {}
         },
         "compile": {
-          "Domain.dll": {}
+          "Domain.App.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -4785,7 +4788,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Domain/1.0.0": {
+    "Domain.App/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

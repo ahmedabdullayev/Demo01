@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using Domain;
+using Domain.App;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 

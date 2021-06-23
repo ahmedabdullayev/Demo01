@@ -1,4 +1,4 @@
-using Domain;
+using Domain.App;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace WebApp.ViewModels.Persons

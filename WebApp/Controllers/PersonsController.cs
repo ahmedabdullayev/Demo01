@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DAL.App.EF;
-using Domain;
+using Domain.App;
 
 namespace WebApp.Controllers
 {
@@ -22,11 +22,14 @@ namespace WebApp.Controllers
         // GET: Persons
         public async Task<IActionResult> Index()
         {
+           // var pick = await _context.PersonPictures.AsNoTracking().ToListAsync();
             var res = await _context.Persons
-                .Include(p => p.PersonPicture)
-                .Include(p=> p.Contacts)
+                //.Include(p => p.PersonPicture)
+                .Include(p=> p.Contacts!.Where(v=>v.ContactValue == "ahma"))
                 .ThenInclude(c=>c.ContactType)
+               // .AsNoTracking()
                 .ToListAsync();
+            await _context.Entry(res.First()).Reference(x => x.PersonPicture).LoadAsync();
             return View(res);
         }
 
