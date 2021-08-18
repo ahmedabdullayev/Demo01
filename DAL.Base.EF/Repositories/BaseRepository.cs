@@ -26,7 +26,7 @@ namespace DAL.Base.EF.Repositories
             RepoDbContext = dbContext;
             RepoDbSet = dbContext.Set<TEntity>();
         }
-        public async Task<IEnumerable<TEntity>> GetAllAsync(bool noTracking = true)
+        public virtual async Task<IEnumerable<TEntity>> GetAllAsync(bool noTracking = true)
         {
             if (noTracking)
             {
@@ -36,7 +36,7 @@ namespace DAL.Base.EF.Repositories
         }
         
 
-        public async Task<TEntity> FirstOrDefaultAsync(TKey id, bool noTracking = true)
+        public virtual async Task<TEntity> FirstOrDefaultAsync(TKey id, bool noTracking = true)
         {
             var query = RepoDbSet.AsQueryable(); // same as above
             if (noTracking)
@@ -46,29 +46,29 @@ namespace DAL.Base.EF.Repositories
             return await query.FirstOrDefaultAsync(e => e.Id!.Equals(id));
         }
 
-        public TEntity Add(TEntity entity)
+        public virtual TEntity Add(TEntity entity)
         {
            return RepoDbSet.Add(entity).Entity;
         }
 
-        public TEntity Update(TEntity entity)
+        public virtual TEntity Update(TEntity entity)
         {
             return RepoDbSet.Update(entity).Entity;
         }
 
-        public TEntity Remove(TEntity entity)
+        public virtual TEntity Remove(TEntity entity)
         {
             return RepoDbSet.Remove(entity).Entity;
         }
 
-        public async Task<TEntity> Remove(TKey id)
+        public virtual async Task<TEntity> Remove(TKey id)
         {
             var entity = await FirstOrDefaultAsync(id);
             
            return Remove(entity);
         }
 
-        public async Task<bool> ExistsAsync(TKey id)
+        public virtual async Task<bool> ExistsAsync(TKey id)
         {
             return await RepoDbSet.AnyAsync(e => e.Id!.Equals(id));
         }

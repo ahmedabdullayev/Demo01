@@ -1,9 +1,10 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using Domain.Base;
 
 namespace Domain.App
 {
-    public class Contact
+    public class Contact : DomainEntityId
     {
         /*
          * for mysql/mariadb
@@ -11,7 +12,6 @@ namespace Domain.App
         public string Id { get; set; } = Guid.NewGuid().ToString();
          */
 
-        public Guid Id { get; set; }
 
         [MaxLength(36)] public string ContactValue { get; set; } = null!;
         //[MaxLength(36)] public string SecondaryContactValue { get; set; } = null!;

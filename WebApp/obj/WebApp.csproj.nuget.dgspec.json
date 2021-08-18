@@ -4,6 +4,173 @@
     "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\WebApp\\WebApp.csproj": {}
   },
   "projects": {
+    "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.DAL.App\\Contracts.DAL.App.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.DAL.App\\Contracts.DAL.App.csproj",
+        "projectName": "Contracts.DAL.App",
+        "projectPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.DAL.App\\Contracts.DAL.App.csproj",
+        "packagesPath": "C:\\Users\\Winny\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.DAL.App\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Winny\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj": {
+                "projectPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj"
+              },
+              "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Domain.App\\Domain.App.csproj": {
+                "projectPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Domain.App\\Domain.App.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj",
+        "projectName": "Contracts.DAL.Base",
+        "projectPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj",
+        "packagesPath": "C:\\Users\\Winny\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.DAL.Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Winny\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.Domain.Base\\Contracts.Domain.Base.csproj": {
+                "projectPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.Domain.Base\\Contracts.Domain.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.Domain.Base\\Contracts.Domain.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.Domain.Base\\Contracts.Domain.Base.csproj",
+        "projectName": "Contracts.Domain.Base",
+        "projectPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.Domain.Base\\Contracts.Domain.Base.csproj",
+        "packagesPath": "C:\\Users\\Winny\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.Domain.Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Winny\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\DAL.App.EF\\DAL.App.EF.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -26,6 +193,12 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.DAL.App\\Contracts.DAL.App.csproj": {
+                "projectPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.DAL.App\\Contracts.DAL.App.csproj"
+              },
+              "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\DAL.Base.EF\\DAL.Base.EF.csproj": {
+                "projectPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\DAL.Base.EF\\DAL.Base.EF.csproj"
+              },
               "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Domain.App\\Domain.App.csproj": {
                 "projectPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Domain.App\\Domain.App.csproj"
               }
@@ -74,6 +247,68 @@
         }
       }
     },
+    "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\DAL.Base.EF\\DAL.Base.EF.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\DAL.Base.EF\\DAL.Base.EF.csproj",
+        "projectName": "DAL.Base.EF",
+        "projectPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\DAL.Base.EF\\DAL.Base.EF.csproj",
+        "packagesPath": "C:\\Users\\Winny\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\DAL.Base.EF\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Winny\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj": {
+                "projectPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.DAL.Base\\Contracts.DAL.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Domain.App\\Domain.App.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -87,15 +322,19 @@
           "C:\\Users\\Winny\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.1"
+          "net5.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
-            "projectReferences": {}
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Domain.Base\\Domain.Base.csproj": {
+                "projectPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Domain.Base\\Domain.Base.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -105,8 +344,8 @@
         }
       },
       "frameworks": {
-        "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "System.ComponentModel.Annotations": {
               "target": "Package",
@@ -124,7 +363,63 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "NETStandard.Library": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Domain.Base\\Domain.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Domain.Base\\Domain.Base.csproj",
+        "projectName": "Domain.Base",
+        "projectPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Domain.Base\\Domain.Base.csproj",
+        "packagesPath": "C:\\Users\\Winny\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Domain.Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Winny\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.Domain.Base\\Contracts.Domain.Base.csproj": {
+                "projectPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.Domain.Base\\Contracts.Domain.Base.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },

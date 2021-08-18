@@ -47,7 +47,7 @@ namespace WebApp.ApiControllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPerson(Guid id, Person person)
         {
-            if (id != person.id)
+            if (id != person.Id)
             {
                 return BadRequest();
             }
@@ -81,7 +81,7 @@ namespace WebApp.ApiControllers
             _context.Persons.Add(person);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPerson", new { id = person.id }, person);
+            return CreatedAtAction("GetPerson", new { id = person.Id }, person);
         }
 
         // DELETE: api/Persons/5
@@ -102,7 +102,7 @@ namespace WebApp.ApiControllers
 
         private bool PersonExists(Guid id)
         {
-            return _context.Persons.Any(e => e.id == id);
+            return _context.Persons.Any(e => e.Id == id);
         }
     }
 }

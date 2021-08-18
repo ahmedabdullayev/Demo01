@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DAL.App.EF;
+using DAL.App.EF.Repositories;
 using Domain.App;
 
 namespace WebApp.Controllers
@@ -13,23 +14,27 @@ namespace WebApp.Controllers
     public class PersonsController : Controller
     {
         private readonly AppDbContext _context;
-
+        private readonly PersonRepository _repository;
         public PersonsController(AppDbContext context)
         {
             _context = context;
+            _repository = new PersonRepository(_context);
         }
 
         // GET: Persons
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index() 
         {
            // var pick = await _context.PersonPictures.AsNoTracking().ToListAsync();
-            var res = await _context.Persons
-                //.Include(p => p.PersonPicture)
-                .Include(p=> p.Contacts!.Where(v=>v.ContactValue == "ahma"))
-                .ThenInclude(c=>c.ContactType)
-               // .AsNoTracking()
-                .ToListAsync();
-            await _context.Entry(res.First()).Reference(x => x.PersonPicture).LoadAsync();
+
+           var res = await _repository.GetAllAsync();
+
+            // var res = await _context.Persons
+            //     //.Include(p => p.PersonPicture)
+            //     .Include(p=> p.Contacts)
+            //     .ThenInclude(c=>c.ContactType)
+            //    // .AsNoTracking()
+            //     .ToListAsync();
+            // await _context.Entry(res.First()).Reference(x => x.PersonPicture).LoadAsync();
             return View(res);
         }
 
@@ -43,7 +48,7 @@ namespace WebApp.Controllers
 
             var person = await _context.Persons
                 .Include(p => p.PersonPicture)
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (person == null)
             {
                 return NotFound();
@@ -68,8 +73,10 @@ namespace WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                person.id = Guid.NewGuid();
-                _context.Add(person);
+                _repository.Add(person);
+                
+                // person.Id = Guid.NewGuid();
+                // _context.Add(person);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -101,7 +108,7 @@ namespace WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, [Bind("id,FirstName,LastName,PersonPictureId")] Person person)
         {
-            if (id != person.id)
+            if (id != person.Id)
             {
                 return NotFound();
             }
@@ -115,7 +122,7 @@ namespace WebApp.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PersonExists(person.id))
+                    if (!PersonExists(person.Id))
                     {
                         return NotFound();
                     }
@@ -140,7 +147,7 @@ namespace WebApp.Controllers
 
             var person = await _context.Persons
                 .Include(p => p.PersonPicture)
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (person == null)
             {
                 return NotFound();
@@ -162,7 +169,7 @@ namespace WebApp.Controllers
 
         private bool PersonExists(Guid id)
         {
-            return _context.Persons.Any(e => e.id == id);
+            return _context.Persons.Any(e => e.Id == id);
         }
     }
 }

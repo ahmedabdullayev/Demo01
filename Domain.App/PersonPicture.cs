@@ -1,11 +1,11 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using Domain.Base;
 
 namespace Domain.App
 {
-    public class PersonPicture
+    public class PersonPicture : DomainEntityId
     {
-        public Guid Id { get; set; }
 
         [MaxLength(255)]
         public string? PictureUrl { get; set; }

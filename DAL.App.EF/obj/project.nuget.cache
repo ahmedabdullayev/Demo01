@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "HzNn+kdM1N730P6qsTF/zXRgoxReP13LlIb5lwUFVrvjK99lJPKwFaf4KzVBudzhDAkrMO0S93P6W4RTlvDw9A==",
-  "success": true,
+  "dgSpecHash": "B9lfO6jATvjz4c4qTQLJCtuSihUiA4oFygk97vonlCNvfar796FClAq+48i8hrBZAxkZXQTQZnMMmJftDVWGZQ==",
+  "success": false,
   "projectFilePath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\DAL.App.EF\\DAL.App.EF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Winny\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.1\\microsoft.aspnetcore.cryptography.internal.5.0.1.nupkg.sha512",
@@ -104,5 +104,15 @@
     "C:\\Users\\Winny\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Winny\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore from 5.0.5 to 5.0.1. Reference the package directly from the project to select a different version. \r\n DAL.App.EF -> DAL.Base.EF -> Microsoft.EntityFrameworkCore (>= 5.0.5) \r\n DAL.App.EF -> Microsoft.EntityFrameworkCore (>= 5.0.1)",
+      "libraryId": "Microsoft.EntityFrameworkCore",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

@@ -1544,10 +1544,62 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Contracts.DAL.App/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Contracts.DAL.Base": "1.0.0",
+          "Domain.App": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Contracts.DAL.App.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Contracts.DAL.App.dll": {}
+        }
+      },
+      "Contracts.DAL.Base/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Contracts.Domain.Base": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Contracts.DAL.Base.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Contracts.DAL.Base.dll": {}
+        }
+      },
+      "Contracts.Domain.Base/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Contracts.Domain.Base.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Contracts.Domain.Base.dll": {}
+        }
+      },
+      "DAL.Base.EF/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Contracts.DAL.Base": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.5"
+        },
+        "compile": {
+          "bin/placeholder/DAL.Base.EF.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAL.Base.EF.dll": {}
+        }
+      },
       "Domain.App/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
+        "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "Domain.Base": "1.0.0",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
@@ -1555,6 +1607,19 @@
         },
         "runtime": {
           "bin/placeholder/Domain.App.dll": {}
+        }
+      },
+      "Domain.Base/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Contracts.Domain.Base": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Domain.Base.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.Base.dll": {}
         }
       }
     }
@@ -5862,14 +5927,41 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Contracts.DAL.App/1.0.0": {
+      "type": "project",
+      "path": "../Contracts.DAL.App/Contracts.DAL.App.csproj",
+      "msbuildProject": "../Contracts.DAL.App/Contracts.DAL.App.csproj"
+    },
+    "Contracts.DAL.Base/1.0.0": {
+      "type": "project",
+      "path": "../Contracts.DAL.Base/Contracts.DAL.Base.csproj",
+      "msbuildProject": "../Contracts.DAL.Base/Contracts.DAL.Base.csproj"
+    },
+    "Contracts.Domain.Base/1.0.0": {
+      "type": "project",
+      "path": "../Contracts.Domain.Base/Contracts.Domain.Base.csproj",
+      "msbuildProject": "../Contracts.Domain.Base/Contracts.Domain.Base.csproj"
+    },
+    "DAL.Base.EF/1.0.0": {
+      "type": "project",
+      "path": "../DAL.Base.EF/DAL.Base.EF.csproj",
+      "msbuildProject": "../DAL.Base.EF/DAL.Base.EF.csproj"
+    },
     "Domain.App/1.0.0": {
       "type": "project",
       "path": "../Domain.App/Domain.App.csproj",
       "msbuildProject": "../Domain.App/Domain.App.csproj"
+    },
+    "Domain.Base/1.0.0": {
+      "type": "project",
+      "path": "../Domain.Base/Domain.Base.csproj",
+      "msbuildProject": "../Domain.Base/Domain.Base.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Contracts.DAL.App >= 1.0.0",
+      "DAL.Base.EF >= 1.0.0",
       "Domain.App >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.1",
       "Microsoft.EntityFrameworkCore >= 5.0.1",
@@ -5901,6 +5993,12 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.DAL.App\\Contracts.DAL.App.csproj": {
+              "projectPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Contracts.DAL.App\\Contracts.DAL.App.csproj"
+            },
+            "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\DAL.Base.EF\\DAL.Base.EF.csproj": {
+              "projectPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\DAL.Base.EF\\DAL.Base.EF.csproj"
+            },
             "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Domain.App\\Domain.App.csproj": {
               "projectPath": "C:\\Users\\Winny\\Documents\\ASPNET\\Demo01\\Domain.App\\Domain.App.csproj"
             }
@@ -5948,5 +6046,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore from 5.0.5 to 5.0.1. Reference the package directly from the project to select a different version. \r\n DAL.App.EF -> DAL.Base.EF -> Microsoft.EntityFrameworkCore (>= 5.0.5) \r\n DAL.App.EF -> Microsoft.EntityFrameworkCore (>= 5.0.1)",
+      "libraryId": "Microsoft.EntityFrameworkCore",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }
